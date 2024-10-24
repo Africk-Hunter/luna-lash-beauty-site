@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import hamburger from '../images/hamburger.svg'
 
 const Navbar: React.FC = () => {
 
@@ -13,6 +14,14 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  function toggleHamburger(){
+    if(document.getElementById('navBarLinks')?.classList.contains('open')){
+      document.getElementById('navBarLinks')?.classList.remove('open');
+      return;
+    }
+    document.getElementById('navBarLinks')?.classList.add('open');
+  }
+
   return (
 
     <section className='navbar' id='navbar'>
@@ -20,14 +29,14 @@ const Navbar: React.FC = () => {
         <>
           <section className='topBarWrapper mobile'>
             <h1 className='companyName'>Luna Lash & Beauty Co.</h1>
-            <button className='hamburgerButton'><img src="" alt="Dropdown Menu" /></button>
+            <button className='hamburgerButton' onClick={toggleHamburger}><img src={hamburger} alt="Dropdown Menu" className='hamburgerImg'/></button>
           </section>
-          <nav className='navBarLinks mobile'>
+          <nav className='navBarLinks mobile' id='navBarLinks'>
             <NavLinkButton windowWidth={windowWidth} name='Home' />
             <NavLinkButton windowWidth={windowWidth} name='Services' />
             <NavLinkButton windowWidth={windowWidth} name='Gallery' />
             <NavLinkButton windowWidth={windowWidth} name='About' />
-            <NavLinkButton windowWidth={windowWidth} name='Gallery' />
+            <NavLinkButton windowWidth={windowWidth} name='FAQ' />
           </nav>
         </>
       ) : (
@@ -39,7 +48,7 @@ const Navbar: React.FC = () => {
               <NavLinkButton windowWidth={windowWidth} name='Services' />
               <NavLinkButton windowWidth={windowWidth} name='Gallery' />
               <NavLinkButton windowWidth={windowWidth} name='About' />
-              <NavLinkButton windowWidth={windowWidth} name='Gallery' />
+              <NavLinkButton windowWidth={windowWidth} name='FAQ' />
             </nav>
           </section>
         </>
