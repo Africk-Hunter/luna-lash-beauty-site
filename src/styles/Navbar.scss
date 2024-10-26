@@ -1,8 +1,15 @@
 @use './variables' as *; 
 
 .navbar{
+    position: sticky;
     width: 100%;
-    background: $mainColor
+    background: $mainColor;
+
+    @media (min-width: 769px) {
+        display: flex;
+        justify-content: center;
+    }
+
 }
 .topBarWrapper{
     display: flex;
@@ -14,13 +21,17 @@
         margin: 0 2rem 0 2rem;
     }
     &.desktop{
-
+        width: 75%;
     }
 }
 
 .companyName{
     font-size: clamp(1rem, 1.25rem, 1.5rem);
     font-weight: 500;
+
+    @media (min-width: 769px) {
+        font-size: clamp(2rem, 2.5rem, 2.5rem);
+    }
 }
 
 .hamburgerButton{
@@ -35,35 +46,48 @@
     height: 100%;
 }
 
-.navBarLinks{
-    display: none;
-    background-color: $whiteColor;
-    color: $mainColor;
-    transition: all .5s ease-in-out;
-    &.mobile{
-        height: 0%;
+.navBarLinks {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    transition: max-height 0.5s ease-in-out;  
+    
+    &.mobile {
         width: 100%;
-        flex-direction: column;
-        align-items: center;
+        overflow: hidden;
+        max-height: 0;    
+        background-color: $whiteColor; 
+        color: $mainColor;
+    }
+    &.desktop {
+        flex-direction: row;
+        color: white;
+        font-size: clamp(1.4rem, 1.4rem, 1.4rem);
+        gap: 4rem;
     }
 
-    &.open{
-        display: flex;
-        height: 100%;
-    }
-    &.desktop{
-
+    &.open {
+        max-height: 20rem;  
     }
 }
 
+
 .navLinkButton{
     all: unset;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    transition: all .1s ease-in-out;
+    cursor: pointer;
     &.mobile{
-        padding: 1rem 0;
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 600;
+        padding: 1rem 0; 
     }
     &.desktop{
-        
+        padding: 1rem 0; 
+        font-family: 'Lora', serif;
+        font-weight: 400;
+    }
+    &.desktop:hover{
+        transform: scale(1.1);
     }
 }
