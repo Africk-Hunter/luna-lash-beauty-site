@@ -30,8 +30,6 @@ const Navbar: React.FC = () => {
   }
 
   return (
-
-
     <section className='navbar' id='navbar'>
       {windowWidth < 768 ? (
         <>
@@ -52,7 +50,6 @@ const Navbar: React.FC = () => {
     </section>
   );
 };
-
 
 interface NavBarLinksProps {
   windowWidth: number;
@@ -86,8 +83,13 @@ interface NavLinkButtonProps {
 }
 const NavLinkButton: React.FC<NavLinkButtonProps> = ({ windowWidth, name }) => {
 
-  const linkDirect = './' + name.toLowerCase();
-
+  let linkDirect: string = '';
+  if(name != 'Home'){
+    linkDirect= './' + name.toLowerCase();
+  } else{
+    linkDirect = './';
+  }
+  
   return (
     <>
       {windowWidth < 768 ? (
