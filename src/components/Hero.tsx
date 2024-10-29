@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import HeroImageOne from '../images/stockImageOne.png'
 import HeroImageTwo from '../images/stockImageTwo.png'
 import HeroArrow from '../images/heroArrow.svg'
+import HeroShape from '../images/heroShape.svg'
 
 const Hero: React.FC = () => {
 
@@ -38,20 +39,26 @@ const Hero: React.FC = () => {
                     </section>
                 </>
             ) : (
-                <section className='heroSectionWrapper'>
-                    <section className='heroDescriptionSide'>
-                        <h2 className='tagline'>Elevate Your Beauty, One Lash at a Time</h2>
-                        <p className='tagline secondary'>Lashes, Brows, Full Body Waxes, and Skincare done with care and attention. Simple, easy, and designed around you. </p>
-                        <section className='heroButtonContainer'>
-                            <LandingButton redirectLink='' buttonText='Book Now' />
-                            <LandingButton redirectLink='' buttonText='View Menu' />
+                <>
+                    <div className='backgroundShapeOne'></div>
+                    <div className='backgroundShapeTwo'></div>
+                    <img src={HeroShape} className='backgroundShapeThree' />
+                    <section className='heroSectionWrapper'>
+                        <section className='heroDescriptionSide'>
+                            <h2 className='tagline'>Elevate Your Beauty, One Lash at a Time</h2>
+                            <p className='tagline secondary'>Lashes, Brows, Full Body Waxes, and Skincare done with care and attention. Simple, easy, and designed around you. </p>
+                            <section className='heroButtonContainer'>
+                                <LandingButton redirectLink='' buttonText='Book Now' />
+                                <LandingButton redirectLink='' buttonText='View Menu' />
+                            </section>
+                        </section >
+                        <section className='heroImages'>
+                            <img src={HeroImageOne} alt="" className='landingImage one' />
+                            <img src={HeroImageTwo} alt="" className='landingImage two' />
                         </section>
                     </section >
-                    <section className='heroImages'>
-                        <img src={HeroImageOne} alt="" className='landingImage one' />
-                        <img src={HeroImageTwo} alt="" className='landingImage two' />
-                    </section>
-                </section >
+                </>
+
             )}
 
         </div >

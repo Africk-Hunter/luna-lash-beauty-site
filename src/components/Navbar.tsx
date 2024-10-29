@@ -84,12 +84,12 @@ interface NavLinkButtonProps {
 const NavLinkButton: React.FC<NavLinkButtonProps> = ({ windowWidth, name }) => {
 
   let linkDirect: string = '';
-  if(name != 'Home'){
-    linkDirect= '/' + name.toLowerCase();
-  } else{
+  if (name != 'Home') {
+    linkDirect = '/' + name.toLowerCase();
+  } else {
     linkDirect = '/';
   }
-  
+
   return (
     <>
       {windowWidth < 768 ? (

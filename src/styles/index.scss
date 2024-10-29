@@ -1,19 +1,20 @@
 @use './variables';
 @use './Navbar';
 @use './Hero';
+@use './Contact';
 
 
-html{
+html {
     margin: 0;
     padding: 0;
-    
+
 }
 
-body{
+body {
     margin: 0;
 }
 
-#gatsby-focus-wrapper{
+#gatsby-focus-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: start;

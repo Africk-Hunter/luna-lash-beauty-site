@@ -5,13 +5,45 @@
     justify-content: center;
     width: 100%;
     background: $mainColor;
-    padding: 2rem 0;
+    position: relative;
+    padding: 4rem 0;
+}
+
+.backgroundShapeOne,
+.backgroundShapeTwo,
+.backgroundShapeThree {
+    position: absolute;
+    z-index: 1;
+}
+
+.backgroundShapeOne {
+    width: 200px;
+    height: 200px;
+    border-radius: 50% 0 50% 50%;
+    background: $secondaryColor;
+    top: 20%;
+    right: 10%;
+}
+
+.backgroundShapeTwo {
+    width: 150px;
+    height: 150px;
+    border-radius: 25%;
+    background: $tertiaryColor;
+    bottom: 10%;
+    right: 45%;
+}
+
+.backgroundShapeThree {
+    bottom: 10%;
+    right: 5%;
 }
 
 .heroSectionWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: start;
     margin: 0 2rem;
     gap: 2rem;
 
@@ -19,6 +51,7 @@
         flex-direction: row;
         justify-content: space-between;
         width: 75%;
+        margin: 0 2rem 5rem 2rem;
     }
 }
 
@@ -32,6 +65,7 @@
         width: 50%;
         align-items: flex-start;
         text-align: left;
+        gap: 2rem;
     }
 }
 
@@ -50,6 +84,11 @@
 
     @media (min-width: 769px) {
         font-size: clamp(5rem, 5rem, 5rem);
+        font-weight: 600;
+
+        &.secondary {
+            width: 62%;
+        }
     }
 }
 
@@ -57,16 +96,15 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
+    margin-top: 3rem;
 
-    @media (min-width: 769px) {
-        
-    }
+    @media (min-width: 769px) {}
 }
 
 .landingButton {
     display: flex;
     align-items: center;
-    justify-content: center ;
+    justify-content: center;
     gap: 0.5rem;
     background: $whiteColor;
     width: 7.5rem;
@@ -75,29 +113,56 @@
     text-decoration: none;
     font-size: .9rem;
     font-family: 'Montserrat', serif;
-    &:visited{
+    font-weight: 500;
+
+    &:visited {
         color: $mainColor;
+    }
+
+    @media (min-width: 769px) {
+        width: 10rem;
+        padding: .8rem .85rem;
+        font-size: clamp(0.9rem, 1.2rem, 1.2rem);
     }
 }
 
 .heroImages {
     display: flex;
-    justify-content: space-around;
-    gap: 1rem;
+    justify-content: space-evenly;
 
     @media (min-width: 769px) {
-        margin: 0 2rem;
+        justify-content: end;
+        gap: 5rem;
+        width: 50%;
+        margin: 0;
     }
 }
 
 .landingImage {
     width: 8rem;
     height: auto;
+    z-index: 2;
 
     &.one {
         border-radius: 150px 150px 150px 0;
+        align-self: flex-start;
+        position: relative;
     }
+
     &.two {
         border-radius: 0 150px 150px 150px;
+        position: relative;
+    }
+
+    @media (min-width: 769px) {
+        width: 20rem;
+
+        &.one {
+            top: -3rem;
+        }
+
+        &.two {
+            top: 6rem;
+        }
     }
 }
