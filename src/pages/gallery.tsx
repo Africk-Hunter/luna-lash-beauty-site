@@ -1,11 +1,9 @@
 import React from "react";
+import Navbar from '../components/Navbar';
 
 const Gallery: React.FC = () => {
   return (
-    <div>
-      <h1>Gallery</h1>
-      <p>This is the Gallery page.</p>
-    </div>
+    <Navbar />
   );
 };
 

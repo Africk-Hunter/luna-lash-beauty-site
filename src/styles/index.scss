@@ -1,5 +1,6 @@
 @use './variables';
 @use './Navbar';
+@use './Hero';
 
 
 html{
@@ -10,4 +11,10 @@ html{
 
 body{
     margin: 0;
+}
+
+#gatsby-focus-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
 }

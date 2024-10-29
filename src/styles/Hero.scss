@@ -1,0 +1,103 @@
+@use './variables' as *;
+
+.hero {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background: $mainColor;
+    padding: 2rem 0;
+}
+
+.heroSectionWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 2rem;
+    gap: 2rem;
+
+    @media (min-width: 769px) {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 75%;
+    }
+}
+
+.heroDescriptionSide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @media (min-width: 769px) {
+        width: 50%;
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+.tagline {
+    all: unset;
+    color: $whiteColor;
+    font-family: 'Cormorant', serif;
+    font-size: clamp(2rem, 2.5rem, 2.5rem);
+    font-weight: 500;
+
+    &.secondary {
+        font-size: clamp(0.9rem, 1rem, 1rem);
+        font-family: 'Montserrat', serif;
+        font-weight: 400;
+    }
+
+    @media (min-width: 769px) {
+        font-size: clamp(5rem, 5rem, 5rem);
+    }
+}
+
+.heroButtonContainer {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+
+    @media (min-width: 769px) {
+        
+    }
+}
+
+.landingButton {
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+    gap: 0.5rem;
+    background: $whiteColor;
+    width: 7.5rem;
+    padding: 0.65rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: .9rem;
+    font-family: 'Montserrat', serif;
+    &:visited{
+        color: $mainColor;
+    }
+}
+
+.heroImages {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+
+    @media (min-width: 769px) {
+        margin: 0 2rem;
+    }
+}
+
+.landingImage {
+    width: 8rem;
+    height: auto;
+
+    &.one {
+        border-radius: 150px 150px 150px 0;
+    }
+    &.two {
+        border-radius: 0 150px 150px 150px;
+    }
+}

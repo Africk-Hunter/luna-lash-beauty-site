@@ -15,7 +15,8 @@ const config: GatsbyConfig = {
       options: {
         fonts: [
           `lora\:400,500,600,700`,
-          `montserrat\:400,500,600,700`
+          `montserrat\:400,500,600,700`,
+          `cormorant\:400,500,600,700`
         ],
         display: 'swap'
       },

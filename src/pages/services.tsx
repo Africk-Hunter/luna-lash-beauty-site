@@ -1,10 +1,10 @@
 import React from 'react';
-/* import Layout from '../components/Layout'; */
-import '../styles/index.scss'; // Import your Sass styles
+import Navbar from '../components/Navbar';
+import '../styles/index.scss';
 
 const LandingPage: React.FC = () => {
   return (
-    <div>hello</div>
+    <Navbar />
   );
 };
 

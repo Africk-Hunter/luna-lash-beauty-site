@@ -1,0 +1,72 @@
+import React, { useEffect, useState } from 'react';
+import HeroImageOne from '../images/stockImageOne.png'
+import HeroImageTwo from '../images/stockImageTwo.png'
+import HeroArrow from '../images/heroArrow.svg'
+
+const Hero: React.FC = () => {
+
+    const [windowWidth, setWindowWidth] = useState(0)
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+        setWindowWidth(window.innerWidth);
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('popstate', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('popstate', handleResize);
+        };
+    }, []);
+
+    return (
+        <div className='hero' id='hero'>
+            {windowWidth < 768 ? (
+                <>
+                    <section className='heroSectionWrapper'>
+                        <h2 className='tagline'>Elevate Your Beauty, One Lash at a Time</h2>
+                        <section className='heroImages'>
+                            <img src={HeroImageOne} alt="" className='landingImage one' />
+                            <img src={HeroImageTwo} alt="" className='landingImage two' />
+                        </section>
+                        <p className='tagline secondary'>Lashes, Brows, Full Body Waxes, and Skincare done with care and attention. Simple, easy, and designed around you. </p>
+                        <section className='heroButtonContainer'>
+                            <LandingButton redirectLink='' buttonText='Book Now' />
+                            <LandingButton redirectLink='' buttonText='View Menu' />
+                        </section>
+                    </section>
+                </>
+            ) : (
+                <section className='heroSectionWrapper'>
+                    <section className='heroDescriptionSide'>
+                        <h2 className='tagline'>Elevate Your Beauty, One Lash at a Time</h2>
+                        <p className='tagline secondary'>Lashes, Brows, Full Body Waxes, and Skincare done with care and attention. Simple, easy, and designed around you. </p>
+                        <section className='heroButtonContainer'>
+                            <LandingButton redirectLink='' buttonText='Book Now' />
+                            <LandingButton redirectLink='' buttonText='View Menu' />
+                        </section>
+                    </section >
+                    <section className='heroImages'>
+                        <img src={HeroImageOne} alt="" className='landingImage one' />
+                        <img src={HeroImageTwo} alt="" className='landingImage two' />
+                    </section>
+                </section >
+            )}
+
+        </div >
+    );
+};
+
+interface LandingButtonProps {
+    redirectLink: string;
+    buttonText: string;
+}
+
+const LandingButton: React.FC<LandingButtonProps> = ({ redirectLink, buttonText }) => {
+    return (
+        <a href={redirectLink} className='landingButton'>{buttonText}<img src={HeroArrow} alt=''></img> </a>
+    );
+};
+
+export default Hero;
