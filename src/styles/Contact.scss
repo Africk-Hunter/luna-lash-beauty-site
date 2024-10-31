@@ -70,7 +70,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20rem;
+    white-space: nowrap;
 
     @media (min-width: 769px) {
         justify-content: space-between;

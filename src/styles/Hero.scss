@@ -96,9 +96,10 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 3rem;
 
-    @media (min-width: 769px) {}
+    @media (min-width: 769px) {
+        margin-top: 3rem;
+    }
 }
 
 .landingButton {
