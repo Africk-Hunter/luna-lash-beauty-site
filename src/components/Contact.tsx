@@ -20,7 +20,11 @@ const ContactForm: React.FC = () => {
   return (
     <>
       <h1 className="contactCTAHeader">Drop us a line!</h1>
-      <textarea placeholder="Your Name"></textarea>
+      <input placeholder="Name" className="contactInput"></input>
+      <input placeholder="Email Address" className="contactInput"></input>
+      <input placeholder="Phone Number" className="contactInput"></input>
+      <textarea placeholder="Other Notes" className="contactInput textarea"></textarea>
+      <button className="contactSubmitButton">Send</button>
     </>
   );
 };

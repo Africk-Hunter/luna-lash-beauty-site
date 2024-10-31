@@ -5,6 +5,41 @@
     background: $whiteColor;
 }
 
-.contactSectionWrapper{
-    margin: 0 2rem
+.contactSectionWrapper {
+    margin: 3rem 2rem
+}
+
+.contactFormWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+.contactCTAHeader {
+    color: $mainColor;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contactInput {
+    font-size: clamp(0.9rem, 1rem, 1rem);
+    padding: .75rem;
+    border-radius: 10px;
+    border: solid $mainColor 3px;
+    background: $whiteColor;
+    font-family: 'Montserrat', sans-serif;
+    &.textarea {
+        resize: vertical;
+        height: 8rem;
+    }
+}
+
+.contactSubmitButton {
+    font-size: clamp(0.9rem, 1rem, 1rem);
+    width: 7rem;
+    border-radius: 50px;
+    background: $mainColor;
+    color: $whiteColor;
+    padding: .3rem .4rem;
+    font-family: 'Montserrat', sans-serif;
 }
