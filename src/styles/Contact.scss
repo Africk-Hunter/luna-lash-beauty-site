@@ -1,0 +1,10 @@
+@use './variables' as *;
+
+.contact {
+    width: 100%;
+    background: $whiteColor;
+}
+
+.contactSectionWrapper{
+    margin: 0 2rem
+}
