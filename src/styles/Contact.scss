@@ -3,19 +3,37 @@
 .contact {
     width: 100%;
     background: $whiteColor;
+
+    @media (min-width: 769px) {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 .contactSectionWrapper {
-    margin: 3rem 2rem
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 2rem;
+    gap: 3rem;
+
+    @media (min-width: 769px) {
+        margin: 8rem 0rem;
+        flex-direction: row;
+        gap: 5rem;
+    }
 }
 
 .contactFormWrapper {
     display: flex;
     flex-direction: column;
     gap: .75rem;
+    @media (min-width: 769px) {
+        width: 35rem;
+        justify-content: space-between;
+    }
 }
 
-.contactCTAHeader {
+.contactHeader {
     color: $mainColor;
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
@@ -32,6 +50,10 @@
         resize: vertical;
         height: 8rem;
     }
+
+    @media (min-width: 769px) {
+        padding: 1rem;
+    }
 }
 
 .contactSubmitButton {
@@ -42,4 +64,31 @@
     color: $whiteColor;
     padding: .3rem .4rem;
     font-family: 'Montserrat', sans-serif;
+}
+
+.companyInformationWrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20rem;
+
+    @media (min-width: 769px) {
+        justify-content: space-between;
+    }
+}
+
+.headerAndTextContainer{
+    width: 75%;
+}
+
+.contactHeader{
+    text-align: center;
+}
+
+.contactParagraph{
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.9rem, .95rem, 1rem);
+    @media (min-width: 769px) {
+        font-size: clamp(0.9rem, 1rem, 1rem);
+    }
 }

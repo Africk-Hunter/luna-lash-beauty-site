@@ -129,6 +129,7 @@
 .heroImages {
     display: flex;
     justify-content: space-evenly;
+    gap: 1.5rem;
 
     @media (min-width: 769px) {
         justify-content: end;
