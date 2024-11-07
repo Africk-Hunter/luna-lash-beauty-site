@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CircleArrow from '../images/circle-arrow.svg';
+import PlusButton from '../images/plusButton.svg';
 
 const ServicePage: React.FC = () => {
     return (
@@ -12,10 +13,51 @@ const ServicePage: React.FC = () => {
     );
 };
 
+interface ServicesContainerProps {
+
+}
+
 const ServicesContainer: React.FC = () => {
+
+    const services = [
+
+        {
+            title: "Classic Full Set",
+            price: 150,
+            subServices: [
+                {
+                    title: "3 week fill",
+                    price: 90,
+                },
+                {
+                    title: "2 week fill",
+                    price: 75,
+                },
+                {
+                    title: "1 week fill",
+                    price: 45,
+                },
+
+            ]
+        }
+    ]
+
+    const servicesList = services.map((service) =>
+        <div className="serviceItem">
+            <div className="serviceInfo">
+                <div className="serviceTitularInfo">
+                    <p className="serviceItemInfo title">{service.title}</p>
+                    <p className="serviceItemInfo titl">${service.price}</p>
+                </div>
+            </div>
+            <button className="serviceToggle"><img src={PlusButton} alt="Expand" /></button>
+        </div>
+
+    );
+
     return (
         <section className="servicesContainer">
-
+            {servicesList}
         </section>
     );
 };
