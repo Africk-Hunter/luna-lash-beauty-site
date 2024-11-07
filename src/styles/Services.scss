@@ -1,0 +1,34 @@
+@use './variables' as *;
+
+.services{
+    background: $mainColor;
+}
+
+.servicesNavBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $whiteColor;
+    margin: 0 2rem 0 2rem;
+}
+
+
+.circleButton{
+    all: unset;
+    display: flex;
+    align-items: center;
+
+    &.left{
+        transform: scaleX(-1);
+    }
+
+    &.unset{
+        opacity: .5;
+    }
+}
+
+.currentServiceTab{
+    font-size: clamp(1.25rem, 1.75rem, 2rem);
+    font-family: 'Lora', serif;
+    font-weight: 400;
+}

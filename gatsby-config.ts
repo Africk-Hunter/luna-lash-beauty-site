@@ -14,7 +14,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `lora\:400,500,600,700`,
+          `lora\:300,400,500,600,700`,
           `montserrat\:400,500,600,700`,
           `cormorant\:400,500,600,700`
         ],
