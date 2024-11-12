@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import CircleArrow from '../images/circle-arrow.svg';
 import PlusButton from '../images/plusButton.svg';
-import { lashServices, lashLifts, browServices, waxServices, facialServices } from './serviceInfo.js';
+import { lashServices, lashLifts, browServices, waxServices, facialServices } from './serviceInfo';
 
 const ServicePage: React.FC = () => {
     const [currentService, setCurrentService] = useState(0); 
@@ -70,7 +70,19 @@ const MobileLayout: React.FC<{
 
 const ServicesContainer: React.FC<{ currentService: number }> = ({ currentService }) => {
 
-    let services;
+    interface SubService {
+        title: string;
+        price: number | null;
+    }
+    
+    interface Service {
+        title: string;
+        price: number;
+        subServices?: SubService[];
+    }
+
+    let services: Service[];
+    
     switch (currentService) {
         case 0:
             services = lashServices;
