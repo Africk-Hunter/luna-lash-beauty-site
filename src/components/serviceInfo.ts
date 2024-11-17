@@ -99,13 +99,19 @@ const lashLifts = [
     {
         title: "Lash lift & tint",
         price: 100,
+        subServices: [
+            {
+                title: "Enhance your natural lashes with a curled lift and a tint for a darker, mascara-free look. Enjoy bold and defined lashes that last for weeks.",
+                price: null,
+            }
+        ]
     },
     {
         title: "Lash lift with tint and Keratin",
         price: 115,
         subServices: [
             {
-                title: "Keratin is a nourishing treatment for your eyelashes. The chemicals in lash lifts can strip the lashes of their natural oils and keratin which can make them dry and brittle over time.  This lash mask adds moisture, keratin and other oils back into the lashes to keep them hydrated and healthy",
+                title: "Elevate your lashes with a lift, tint, and keratin treatment. Keratin restores moisture and keeps your lashes strong and healthyfor a flawless style.",
                 price: null,
             }
         ]
@@ -113,10 +119,22 @@ const lashLifts = [
     {
         title: "Lash lift no tint",
         price: 90,
+        subServices: [
+            {
+                title: "Achieve a natural, eye-opening curl with our classic lash lift. This treatment enhances your lashes’ natural shape without the need for mascara or extensions.",
+                price: null,
+            }
+        ]
     },
     {
         title: "Lash lift no tint with keratin",
         price: 105,
+        subServices: [
+            {
+                title: "Experience a lash lift designed to keep your lashes healthy and hydrated. Includes a nourishing keratin treatment to restore moisture, strength, and shine, leaving your lashes feeling as good as they look.",
+                price: null,
+            }
+        ]
     }
 ];
 const browServices = [
