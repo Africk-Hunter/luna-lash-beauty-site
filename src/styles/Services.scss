@@ -6,8 +6,10 @@
     background: $mainColor;
     padding: 0 0 1rem 0;
     min-height: 80vh;
+    background: $whiteColor;
     @media (min-width: 769px) {
         align-items: center;
+        background: $mainColor;
     }
     
 }
@@ -16,27 +18,40 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: $whiteColor;
+    color: $mainColor;
     margin: 0 2rem 1rem 2rem;
+    @media (min-width: 769px) {
+        background: $mainColor;
+        color: $whiteColor
+    }
 }
 
 
-.circleButton{
-    all: unset;
+    .circleButton{
+        all: unset;
+        display: flex;
+        align-items: center;
+        width: 1.8rem;
+        height: 1.8rem;
+        transform: scaleX(1);
+
+        &.left{
+            transform: scaleX(-1);
+        }
+
+        &.unset{
+            opacity: .5;
+        }
+    }
+
+.circleButtonImg{
     display: flex;
-    align-items: center;
-
-    &.left{
-        transform: scaleX(-1);
-    }
-
-    &.unset{
-        opacity: .5;
-    }
+    width: 100%;
+    height: auto;
 }
 
 .currentServiceTab{
-    font-size: clamp(1.25rem, 1.75rem, 2rem);
+    font-size: clamp(1.25rem, 1.8rem, 2rem);
     font-family: 'Lora', serif;
     font-weight: 400;
 }
@@ -62,14 +77,13 @@
     background: $whiteColor;
     padding: .75rem 1rem;
     border-radius: 25px;
-    margin: 0 3.5rem;
+    margin: 0 1rem;
     transition: all .25s ease-in-out;
 
 
     @media (min-width: 769px) {
         margin: 0;
         width: 100%;
-        
     }
 }
 
@@ -78,9 +92,13 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    font-size: clamp(0.5rem, 1.1rem, 1.5rem);
+    font-size: clamp(0.5rem, 1.3rem, 1.5rem);
     font-family: 'Lora', serif;
     font-weight: 600;
+
+    @media (min-width: 769px) {
+        font-size: clamp(0.5rem, 1.1rem, 1.5rem);
+    }
 }
 
 
@@ -115,7 +133,7 @@
     align-items: center;
     cursor: pointer;
     @media (min-width: 769px) {
-       display: none;
+       display: flex;
     }
 }
 

@@ -4,7 +4,7 @@ import PlusButton from '../images/plusButton.svg';
 import { lashServices, lashLifts, browServices, waxServices, facialServices } from './serviceInfo';
 
 const ServicePage: React.FC = () => {
-    const [currentService, setCurrentService] = useState(0); 
+    const [currentService, setCurrentService] = useState(0);
 
     return (
         <section className="services" id='services'>
@@ -22,8 +22,7 @@ const ServicePage: React.FC = () => {
 
 const MobileLayout: React.FC<{
     currentService: number;
-    updateCurrentService: (newIndex: number) => void;
-}> = ({ currentService, updateCurrentService }) => {
+    updateCurrentService: (newIndex: number) => void;}> = ({ currentService, updateCurrentService }) => {
     const serviceTabOptions = [
         'Eyelash Extensions',
         'Lash Lifts',
@@ -61,7 +60,7 @@ const MobileLayout: React.FC<{
                 onClick={() => updateServiceFunc('plus')}
                 disabled={currentService === maxService}
             >
-                <img src={CircleArrow} alt="Next Service" />
+                <img src={CircleArrow} alt="Next Service"  className="circleButtonImg"/>
             </button>
         </>
     );
@@ -74,7 +73,7 @@ const ServicesContainer: React.FC<{ currentService: number }> = ({ currentServic
         title: string;
         price: number | null;
     }
-    
+
     interface Service {
         title: string;
         price: number;
@@ -82,7 +81,7 @@ const ServicesContainer: React.FC<{ currentService: number }> = ({ currentServic
     }
 
     let services: Service[];
-    
+
     switch (currentService) {
         case 0:
             services = lashServices;
