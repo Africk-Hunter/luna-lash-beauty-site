@@ -31,6 +31,7 @@
 .companyName {
     font-size: clamp(1rem, 1.25rem, 1.5rem);
     font-weight: 400;
+    cursor: pointer;
 
     @media (min-width: 769px) {
         font-size: clamp(2rem, 2.25rem, 2.5rem);

@@ -7,6 +7,10 @@
     background: $mainColor;
     position: relative;
     padding: 2rem 0 4rem 0;
+
+    @media (min-width: 769px) {
+        padding: 10rem 0 4rem 0;
+    }
 }
 
 .backgroundShapeOne,
@@ -25,7 +29,7 @@
     height: 200px;
     border-radius: 50% 0 50% 50%;
     background: $secondaryColor;
-    top: 20%;
+    top: 33%;
     right: 10%;
 }
 
@@ -109,7 +113,7 @@
     margin: 1.5rem 0 1.5rem 0;
 
     @media (min-width: 769px) {
-        margin-top: 3rem;
+        margin-top: 5rem;
     }
 }
 
@@ -150,7 +154,6 @@
     display: flex;
     justify-content: space-evenly;
     gap: 1.5rem;
-
 
     @media (min-width: 769px) {
         justify-content: end;

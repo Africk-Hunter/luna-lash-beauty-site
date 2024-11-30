@@ -40,8 +40,11 @@ interface HeaderAndTextProps {
 const HeaderAndText: React.FC<HeaderAndTextProps> = ({ header, texts }) => {
 
   const textList = texts.map((text) =>
-    <p className="contactParagraph">{text}</p>
+    <p className="contactParagraph">
+      <span style={{ color: 'inherit', textDecoration: 'none' }}>{text}</span>
+    </p>
   );
+  
   return (
     <div className="headerAndTextContainer">
       <h1 className="contactHeader">{header}</h1>
