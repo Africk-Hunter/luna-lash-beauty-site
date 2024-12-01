@@ -4,6 +4,7 @@
     position: sticky;
     width: 100%;
     background: $mainColor;
+    z-index: 2;
 
     @media (min-width: 769px) {
         display: flex;

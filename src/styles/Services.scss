@@ -5,13 +5,17 @@
     flex-direction: column;
     background: $mainColor;
     padding: 0 0 1rem 0;
-    min-height: 80vh;
+    min-height: 73vh;
     background: $whiteColor;
     padding: 1rem 0 2rem 0;
 
     @media (min-width: 769px) {
         align-items: center;
         background: $mainColor;
+        min-height: 70vh;
+    }
+    @media (min-width: 1921px) {
+        min-height: 75vh;
     }
 
 }
@@ -45,6 +49,10 @@
     &.unset {
         opacity: .5;
     }
+
+    @media (min-width: 769px) {
+        display: none;
+    }
 }
 
 .circleButtonImg {
@@ -71,7 +79,7 @@
     font-family: 'Lora', serif;
     font-weight: 400;
     opacity: .5;
-    transition: all .1s ease-in-out;
+    transition: all .15s ease-in-out;
     cursor: pointer;
 
     &.active{

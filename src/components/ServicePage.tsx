@@ -88,7 +88,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ currentService, updateCurrentSe
             updateCurrentService(currentService + 1);
         } else if (plusOrMinus === 'minus' && currentService > 0) {
             updateCurrentService(currentService - 1);
-        } else {
+        } else if (typeof plusOrMinus === 'number') {
             updateCurrentService(plusOrMinus);
         }
     };
@@ -100,7 +100,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ currentService, updateCurrentSe
             'Waxing',
             'Facials',
         ]
-        if (!initialized){
+        if (!initialized) {
             updateServiceFunc(2)
             initialized = true;
         }

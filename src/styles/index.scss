@@ -1,15 +1,16 @@
-@use './variables';
+@use './variables' as *;
 @use './Navbar';
 @use './Hero';
 @use './Contact';
 @use './Footer';
 @use './Services';
+@use './About';
 
 
 html {
     margin: 0;
     padding: 0;
-
+    background: $mainColor;
 }
 
 body {

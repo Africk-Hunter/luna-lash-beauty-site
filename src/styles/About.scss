@@ -1,0 +1,186 @@
+@use './variables' as *;
+
+.about {
+    height: 100%;
+    overflow: hidden;
+    background: $whiteColor;
+    min-height: 73vh;
+
+    @media (min-width: 769px) {
+        min-height: 86vh;
+        background: $mainColor;
+    }
+
+    @media (min-width: 1921px) {
+        min-height: 88vh;
+    }
+}
+
+.AbtbackgroundShapeOne,
+.AbtbackgroundShapeTwo,
+.AbtbackgroundShapeThree {
+    position: absolute;
+    z-index: 1;
+}
+
+.AbtbackgroundShapeOne {
+    width: 40px;
+    height: 70px;
+    border-radius: 2rem 0 0 2rem;
+    background: $secondaryColor;
+    top: 10%;
+    right: 0%;
+
+    @media (min-width: 769px) {
+        width: 160px;
+        height: 95px;
+        border-radius: 0 0 5rem 5rem;
+        top: 20%;
+        right: 5%;
+    }
+
+    @media (min-width: 1921px) {
+        width: 250px;
+        height: 140px;
+        border-radius: 0 0 10rem 10rem;
+        top: 20%;
+        right: 5%;
+    }
+}
+
+.AbtbackgroundShapeTwo {
+    width: 40px;
+    height: 80px;
+    border-radius: 0 2.3rem 2.3rem 0;
+    background: $fourthColor;
+    top: 27%;
+    left: 0%;
+
+    @media (min-width: 769px) {
+        width: 160px;
+        height: 160px;
+        border-radius: 0 5rem 5rem 5rem;
+        top: 60%;
+        left: 17%;
+    }
+
+    @media (min-width: 1921px) {
+        width: 200px;
+        height: 200px;
+        border-radius: 0 10rem 10rem 10rem;
+        top: 60%;
+        left: 19%;
+    }
+}
+
+.AbtbackgroundShapeThree {
+    width: 30px;
+    height: 125px;
+    border-radius: 2rem 0 0 2rem;
+    background: $tertiaryColor;
+    bottom: 20%;
+    right: 0%;
+
+    @media (min-width: 769px) {
+        width: 160px;
+        height: 160px;
+        border-radius: 5rem;
+        top: 67%;
+        right: 17%;
+    }
+
+    @media (min-width: 1921px) {
+        width: 200px;
+        height: 200px;
+        border-radius: 10rem;
+        top: 67%;
+        right: 17%;
+    }
+}
+
+.aboutPage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0 0 0;
+
+    @media (min-width: 769px) {
+        margin: 7.5rem 0 auto 0;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: start;
+        padding: 0 22%;
+    }
+
+    @media (min-width: 1921px) {
+        margin: 10rem 0 auto 0;
+        padding: 0 22%;
+    }
+}
+
+.aboutImage {
+    border-radius: 50%;
+    width: 14rem;
+    z-index: 2;
+
+    @media (min-width: 769px) {
+        width: 31.25rem;
+        height: 31.25rem;
+        border-radius: 50px;
+    }
+
+    @media (min-width: 1921px) {
+        width: 40rem;
+        height: 40rem;
+        border-radius: 75px;
+    }
+}
+
+.aboutText {
+    color: #000;
+    font-family: 'Montserrat', serif;
+    padding: 0 3rem;
+
+    @media (min-width: 769px) {
+        padding: 0 0 0 3rem;
+        color: $whiteColor
+    }
+}
+
+.aboutIntro {
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin: .1rem 0;
+
+    @media (min-width: 769px) {
+        font-size: 3.75rem;
+    }
+
+    @media (min-width: 1921px) {
+        font-size: 4.25rem;
+    }
+}
+
+.aboutDesc {
+    margin: .75rem 0;
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 1.6rem;
+    text-align: justify;
+
+    @media (min-width: 769px) {
+        font-size: 1.6rem;
+        text-align: left;
+        line-height: 2.25rem;
+    }
+
+    @media (min-width: 1921px) {
+        font-size: 2.2rem;
+    }
+}
+
+br {
+    @media (min-width: 769px) {
+        display: none;
+    }
+}
