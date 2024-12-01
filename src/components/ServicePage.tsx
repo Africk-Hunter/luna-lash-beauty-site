@@ -1,74 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import CircleArrow from '../images/circle-arrow.svg';
 import PlusButton from '../images/plusButton.svg';
 import { lashServices, lashLifts, browServices, waxServices, facialServices } from './serviceInfo';
 
-const ServicePage: React.FC = () => {
-    const [currentService, setCurrentService] = useState(0);
+interface ServicePageProps { }
 
-    return (
-        <section className="services" id='services'>
-            <MobileLayout currentService={currentService} updateCurrentService={setCurrentService} />
-            <ServicesContainer currentService={currentService} updateCurrentService={setCurrentService} />
-        </section>
-    );
-};
+const ServicePage: React.FC<ServicePageProps> = () => {
+    const [currentService, setCurrentService] = useState<number>(0);
+    const [startX, setStartX] = useState<number>(0);
+    const [startY, setStartY] = useState<number>(0);
 
-
-const MobileLayout: React.FC<{
-
-    currentService: number;
-
-    updateCurrentService: (newIndex: number) => void;
-}> = ({ currentService, updateCurrentService }) => {
-    const serviceTabOptions = [
-        'Eyelash Extensions',
-        'Lash Lifts',
-        'Brow Services',
-        'Waxing',
-        'Facials'
-    ];
-
-    const maxService = 4;
-
-    function updateServiceFunc(plusOrMinus: string) {
-        if (plusOrMinus === 'plus' && currentService < maxService) {
-            updateCurrentService(currentService + 1);
-        } else if (plusOrMinus === 'minus' && currentService > 0) {
-            updateCurrentService(currentService - 1);
-        }
-    }
-
-    return (
-        <section className="servicesNavBar" >
-            <button
-                className={`circleButton left ${currentService === 0 ? 'unset' : ''}`}
-                onClick={() => updateServiceFunc('minus')}
-                disabled={currentService === 0}
-            >
-                <img src={CircleArrow} alt="Previous Service" className="circleButtonImg" />
-            </button>
-
-            <h2 className="currentServiceTab" id='currentServiceTab'>
-                {serviceTabOptions[currentService]}
-            </h2>
-
-            <button
-                className={`circleButton right ${currentService === maxService ? 'unset' : ''}`}
-                onClick={() => updateServiceFunc('plus')}
-                disabled={currentService === maxService}
-            >
-                <img src={CircleArrow} alt="Next Service" className="circleButtonImg" />
-            </button>
-        </section>
-    );
-};
-
-
-const ServicesContainer: React.FC<{ currentService: number; updateCurrentService: (newIndex: number) => void; }> = ({ currentService, updateCurrentService }) => {
-
-    const [startX, setStartX] = useState(0);
-    const [startY, setStartY] = useState(0);
 
     const handleTouchStart = (e: React.TouchEvent) => {
         setStartX(e.touches[0].clientX);
@@ -83,26 +24,89 @@ const ServicesContainer: React.FC<{ currentService: number; updateCurrentService
         const diffY = endY - startY;
 
         if (Math.abs(diffX) > Math.abs(diffY)) {
-            if (diffX > 50 && currentService > 0) {
-                updateCurrentService(currentService - 1);
-            } else if (diffX < -50 && currentService < 4) {
-                updateCurrentService(currentService + 1);
+            if (diffX < -50 && currentService < 4) {
+                setCurrentService(currentService + 1);
+            }
+            else if (diffX > 50 && currentService > 0) {
+                setCurrentService(currentService - 1);
             }
         }
     };
 
-    interface SubService {
-        title: string;
-        price: number | null;
-    }
+    return (
+        <section className="services" id="services" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+            <MobileLayout currentService={currentService} updateCurrentService={setCurrentService} />
+            <ServicesContainer currentService={currentService} />
+        </section>
+    );
+};
 
-    interface Service {
-        title: string;
-        price: number;
-        subServices?: SubService[];
-    }
+interface MobileLayoutProps {
+    currentService: number;
+    updateCurrentService: (newIndex: number) => void;
+}
 
-    let services: Service[];
+const MobileLayout: React.FC<MobileLayoutProps> = ({ currentService, updateCurrentService }) => {
+    const serviceTabOptions = [
+        'Eyelash Extensions',
+        'Lash Lifts',
+        'Brow Services',
+        'Waxing',
+        'Facials'
+    ];
+
+    const maxService = 4;
+
+    const updateServiceFunc = (plusOrMinus: 'plus' | 'minus') => {
+        if (plusOrMinus === 'plus' && currentService < maxService) {
+            updateCurrentService(currentService + 1);
+        } else if (plusOrMinus === 'minus' && currentService > 0) {
+            updateCurrentService(currentService - 1);
+        }
+    };
+
+    return (
+        <section className="servicesNavBar">
+            <button
+                className={`circleButton left ${currentService === 0 ? 'unset' : ''}`}
+                onClick={() => updateServiceFunc('minus')}
+                disabled={currentService === 0}
+            >
+                <img src={CircleArrow} alt="Previous Service" className="circleButtonImg" />
+            </button>
+
+            <h2 className="currentServiceTab" id="currentServiceTab">
+                {serviceTabOptions[currentService]}
+            </h2>
+
+            <button
+                className={`circleButton right ${currentService === maxService ? 'unset' : ''}`}
+                onClick={() => updateServiceFunc('plus')}
+                disabled={currentService === maxService}
+            >
+                <img src={CircleArrow} alt="Next Service" className="circleButtonImg" />
+            </button>
+        </section>
+    );
+};
+
+interface SubService {
+    title: string;
+    price: number | null;
+}
+
+interface Service {
+    title: string;
+    price: number;
+    subServices?: SubService[];
+}
+
+interface ServicesContainerProps {
+    currentService: number;
+}
+
+const ServicesContainer: React.FC<ServicesContainerProps> = ({ currentService }) => {
+    let services: Service[] = [];
 
     switch (currentService) {
         case 0:
@@ -125,53 +129,22 @@ const ServicesContainer: React.FC<{ currentService: number; updateCurrentService
             break;
     }
 
-    function expandServiceBox(index: number) {
-        const subServicesElement = document.querySelector(
-            `.subServices[data-index='${index}']`
-        ) as HTMLElement;
-
-        if (subServicesElement) {
-            subServicesElement.classList.toggle('visible');
-        }
-    }
-
-    const servicesList = services.map((service, index) => (
+    const servicesList = services.map((service) => (
         <div className="serviceItem" key={service.title}>
             <div className="serviceInfo">
                 <div className="serviceInfoHolder top">
                     <p className="serviceItemInfo title">{service.title}</p>
                     <p className="serviceItemInfo">${service.price}</p>
                 </div>
-
-                {service.subServices && (
-                    <div className={`subServices ${index === 0 ? 'visible' : ''}`} data-index={index}>
-                        {service.subServices.map((subService, subIndex) => (
-                            <div key={subIndex} className="serviceInfoHolder">
-                                <p className="serviceItemInfo sub">{subService.title}</p>
-                                {subService.price && (
-                                    <p className="serviceItemInfo sub">${subService.price}</p>
-                                )}
-                            </div>
-                        ))}
-                    </div>
-                )}
             </div>
-
-            {service.subServices && (
-                <button className="serviceToggle" onClick={() => expandServiceBox(index)}>
-                    <img src={PlusButton} alt="Expand" />
-                </button>
-            )}
         </div>
     ));
 
     return (
-        <section id='servicesContainer' className="servicesContainer fade-in" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+        <section id="servicesContainer" className="servicesContainer">
             {servicesList}
         </section>
     );
 };
-
-
 
 export default ServicePage;
