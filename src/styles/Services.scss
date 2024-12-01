@@ -57,7 +57,34 @@
     font-size: clamp(1.25rem, 1.8rem, 2rem);
     font-family: 'Lora', serif;
     font-weight: 400;
+
+    @media (min-width: 769px) {
+        display: flex;
+        gap: 2.5rem;
+    }
 }
+
+
+.currentServiceButton{
+    all: unset;
+    font-size: clamp(1.25rem, 1.2rem, 2rem);
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    opacity: .5;
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+
+    &.active{
+        font-size: clamp(1.25rem, 1.8rem, 2rem);
+        opacity: 1;
+    }
+
+    &:hover{
+        font-size: clamp(1.25rem, 1.8rem, 2rem);
+        transition: all .25 ease-in-out;
+    }
+}
+
 
 .servicesContainer {
     opacity: 1;
