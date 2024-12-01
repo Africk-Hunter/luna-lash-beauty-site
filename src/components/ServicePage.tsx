@@ -8,21 +8,19 @@ const ServicePage: React.FC = () => {
 
     return (
         <section className="services" id='services'>
-            <section className="servicesNavBar">
-                <MobileLayout
-                    currentService={currentService}
-                    updateCurrentService={setCurrentService}
-                />
-            </section>
-            <ServicesContainer currentService={currentService} />
+            <MobileLayout currentService={currentService} updateCurrentService={setCurrentService} />
+            <ServicesContainer currentService={currentService} updateCurrentService={setCurrentService} />
         </section>
     );
 };
 
 
 const MobileLayout: React.FC<{
+
     currentService: number;
-    updateCurrentService: (newIndex: number) => void;}> = ({ currentService, updateCurrentService }) => {
+
+    updateCurrentService: (newIndex: number) => void;
+}> = ({ currentService, updateCurrentService }) => {
     const serviceTabOptions = [
         'Eyelash Extensions',
         'Lash Lifts',
@@ -42,7 +40,7 @@ const MobileLayout: React.FC<{
     }
 
     return (
-        <>
+        <section className="servicesNavBar" >
             <button
                 className={`circleButton left ${currentService === 0 ? 'unset' : ''}`}
                 onClick={() => updateServiceFunc('minus')}
@@ -60,14 +58,38 @@ const MobileLayout: React.FC<{
                 onClick={() => updateServiceFunc('plus')}
                 disabled={currentService === maxService}
             >
-                <img src={CircleArrow} alt="Next Service"  className="circleButtonImg"/>
+                <img src={CircleArrow} alt="Next Service" className="circleButtonImg" />
             </button>
-        </>
+        </section>
     );
 };
 
 
-const ServicesContainer: React.FC<{ currentService: number }> = ({ currentService }) => {
+const ServicesContainer: React.FC<{ currentService: number; updateCurrentService: (newIndex: number) => void; }> = ({ currentService, updateCurrentService }) => {
+
+    const [startX, setStartX] = useState(0);
+    const [startY, setStartY] = useState(0);
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        setStartX(e.touches[0].clientX);
+        setStartY(e.touches[0].clientY);
+    };
+
+    const handleTouchEnd = (e: React.TouchEvent) => {
+        const endX = e.changedTouches[0].clientX;
+        const endY = e.changedTouches[0].clientY;
+
+        const diffX = endX - startX;
+        const diffY = endY - startY;
+
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            if (diffX > 50 && currentService > 0) {
+                updateCurrentService(currentService - 1);
+            } else if (diffX < -50 && currentService < 4) {
+                updateCurrentService(currentService + 1);
+            }
+        }
+    };
 
     interface SubService {
         title: string;
@@ -143,8 +165,13 @@ const ServicesContainer: React.FC<{ currentService: number }> = ({ currentServic
         </div>
     ));
 
-    return <section className="servicesContainer">{servicesList}</section>;
+    return (
+        <section id='servicesContainer' className="servicesContainer fade-in" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
+            {servicesList}
+        </section>
+    );
 };
+
 
 
 export default ServicePage;

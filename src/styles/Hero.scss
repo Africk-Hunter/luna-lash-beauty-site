@@ -130,7 +130,9 @@
     font-size: 1rem;
     font-family: 'Montserrat', serif;
     font-weight: 500;
+    color: $mainColor;
     
+    &:link,
     &:visited {
         color: $mainColor;
     }
@@ -195,3 +197,6 @@
         }
     }
 }
+
+
+/* book now and view menu invisible text */
