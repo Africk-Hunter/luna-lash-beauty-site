@@ -37,6 +37,10 @@
     @media (min-width: 769px) {
         font-size: clamp(2rem, 2.25rem, 2.5rem);
     }
+
+    @media (min-width: 1921px) {
+        font-size: 2.75rem;
+    }
 }
 
 .hamburgerButton {
@@ -71,6 +75,10 @@
         color: white;
         font-size: clamp(1.4rem, 1.4rem, 1.4rem);
         gap: 4rem;
+
+        @media (min-width: 1921px) {
+            font-size: 1.9rem;
+        }
     }
 
     &.open {

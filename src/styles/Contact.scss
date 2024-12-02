@@ -27,6 +27,7 @@
     display: flex;
     flex-direction: column;
     gap: .75rem;
+
     @media (min-width: 769px) {
         width: 35rem;
         justify-content: space-between;
@@ -37,6 +38,10 @@
     color: $mainColor;
     font-weight: 500;
     font-family: 'Montserrat', sans-serif;
+
+    @media (min-width: 1921px) {
+        font-size: 1.75rem;
+    }
 }
 
 .contactInput {
@@ -46,6 +51,7 @@
     border: solid $mainColor 3px;
     background: $whiteColor;
     font-family: 'Montserrat', sans-serif;
+
     &.textarea {
         resize: vertical;
         height: 8rem;
@@ -53,6 +59,10 @@
 
     @media (min-width: 769px) {
         padding: 1rem;
+    }
+
+    @media (min-width: 1921px) {
+        font-size: 1.25rem;
     }
 }
 
@@ -65,9 +75,20 @@
     padding: .3rem .4rem;
     font-family: 'Montserrat', sans-serif;
     cursor: pointer;
+    transition: all .15s ease-in-out;
+
+    @media (min-width: 1921px) {
+        font-size: 1.25rem;
+        padding: .4rem .5rem;
+    }
+    
+    &:hover{
+        background: $secondaryColor;
+        transform: scale(1.05);
+    }
 }
 
-.companyInformationWrapper{
+.companyInformationWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -78,22 +99,34 @@
     }
 }
 
-.headerAndTextContainer{
+.headerAndTextContainer {
     width: 75%;
 }
 
-.contactHeader{
+.contactHeader {
     text-align: center;
 }
 
-.contactParagraph{
+.contactParagraph {
     font-family: 'Montserrat', sans-serif;
     font-size: clamp(0.9rem, .95rem, 1rem);
+
     @media (min-width: 769px) {
         font-size: clamp(0.9rem, 1rem, 1rem);
     }
-    color: $mainColor;
-    &:link{
-        color:$mainColor;
+
+    @media (min-width: 1921px) {
+        font-size: 1.25rem;
     }
+
+    color: $mainColor;
+
+    &:link {
+        color: $mainColor;
+    }
+}
+
+a[href^=tel] {
+    text-decoration: inherit;
+    color: inherit;
 }
