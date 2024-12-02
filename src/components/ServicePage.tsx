@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CircleArrow from '../images/circle-arrow.svg';
 import PlusButton from '../images/plusButton.svg';
+import MinusButton from '../images/minusButton.svg';
 import { lashServices, lashLifts, browServices, waxServices, facialServices } from './serviceInfo';
 
 interface ServicePageProps { }
