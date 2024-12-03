@@ -18,7 +18,7 @@ const FAQ: React.FC = () => {
         <div className='AbtbackgroundShapeOne'></div>
         <div className='AbtbackgroundShapeTwo'></div>
         <div className='AbtbackgroundShapeThree'></div>
-        <h2 className="faqTitle">Frequently Asked Questions</h2>
+        <h2 className="pageTitle">Frequently Asked Questions</h2>
         <section className="faqHolder">
           <Question question='How should I prepare for my Brazilian Wax?' answer={answers[0]} isOpen={true} />
           <Question question='What is our cancellation policy?' answer={answers[1]} isOpen={false} />
