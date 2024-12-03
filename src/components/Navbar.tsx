@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
     <section className='navbar' id='navbar'>
       {windowWidth < 768 ? (
         <>
-          <section className='topBarWrapper mobile'>
+          <section className='topBarWrapper'>
             <a href='/'><h1 className='companyName'>Luna Lash & Beauty Co.</h1></a>
             <button className='hamburgerButton' onClick={toggleHamburger}><img src={hamburger} alt="Dropdown Menu" className='hamburgerImg' /></button>
           </section>
@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
         </>
       ) : (
         <>
-          <section className='topBarWrapper desktop'>
+          <section className='topBarWrapper'>
             <a href='/'><h1 className='companyName'>Luna Lash & Beauty Co.</h1></a>
             <NavBarLinksWrapper windowWidth={windowWidth} names={['Home', 'Services', 'Gallery', 'About', 'FAQ']} />
           </section>

@@ -39,6 +39,11 @@
         right: 5%;
     }
 
+    @media (min-width: $macbook-air-13) and (max-width: $macbook-air-15) {
+        top: 17%;
+        right: .5%;
+    }
+
     @media (min-width: 1921px) {
         width: 250px;
         height: 140px;
@@ -62,6 +67,11 @@
         border-radius: 0 5rem 5rem 5rem;
         top: 60%;
         left: 17%;
+    }
+
+    @media (min-width: $macbook-air-13) and (max-width: $macbook-air-15) {
+        top: 80%;
+        left: 5%;
     }
 
     @media (min-width: 1921px) {
@@ -89,6 +99,13 @@
         right: 17%;
     }
 
+    @media (min-width: $macbook-air-13) and (max-width: $macbook-air-15) {
+        top: 80%;
+        right: 12%;
+        width: 120px;
+        height: 120px;
+    }
+
     @media (min-width: 1921px) {
         width: 200px;
         height: 200px;
@@ -110,6 +127,11 @@
         justify-content: space-between;
         align-items: start;
         padding: 0 22%;
+    }
+
+    @media (min-width: $macbook-air-13) and (max-width: $macbook-air-15) {
+        padding: 0 10%;
+        margin: 3rem 0 auto 0;
     }
 
     @media (min-width: 1921px) {
@@ -145,6 +167,8 @@
         padding: 0 0 0 3rem;
         color: $whiteColor
     }
+
+
 }
 
 .aboutIntro {
