@@ -38,7 +38,7 @@ const ContactForm: React.FC = () => {
       message,
     };
 
-    emailjs.send('service_cxyb1s5', 'template_8qr8o05', templateParams, 'CBZDxMNtzcxxOowCO')
+    emailjs.send('service_uc7tc3q', 'template_8qr8o05', templateParams, 'CBZDxMNtzcxxOowCO')
       .then((response) => {
         console.log('Email sent successfully!', response.status, response.text);
 
