@@ -74,8 +74,6 @@
         color: $mainColor;
     }
 
-
-
     @media (min-width: 769px) {
         flex-direction: row;
         color: white;
@@ -85,6 +83,7 @@
 
     @media (min-width: $macbook-air-13) and (max-width: $macbook-air-15) {
         gap: 2rem;
+        font-size: 1.15rem;
     }
 
     @media (min-width: 1921px) {
