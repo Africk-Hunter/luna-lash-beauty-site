@@ -70,7 +70,7 @@
     }
 
     @media (min-width: $macbook-air-13) and (max-width: $macbook-air-15) {
-        top: 80%;
+        top: 60%;
         left: 5%;
     }
 
@@ -130,8 +130,8 @@
     }
 
     @media (min-width: $macbook-air-13) and (max-width: $macbook-air-15) {
-        padding: 0 10%;
-        margin: 3rem 0 auto 0;
+        padding: 0 18%;
+        margin: 5rem 0 auto 0;
     }
 
     @media (min-width: 1921px) {
@@ -148,6 +148,12 @@
     @media (min-width: 769px) {
         width: 31.25rem;
         height: 31.25rem;
+        border-radius: 50px;
+    }
+
+    @media (min-width: $macbook-air-13) and (max-width: $macbook-air-15) {
+        width: 23rem;
+        height: 23rem;
         border-radius: 50px;
     }
 
@@ -168,7 +174,6 @@
         color: $whiteColor
     }
 
-
 }
 
 .aboutIntro {
@@ -178,6 +183,9 @@
 
     @media (min-width: 769px) {
         font-size: 3.75rem;
+    }
+    @media (min-width: $macbook-air-13) and (max-width: $macbook-air-15) {
+        font-size: 2.8rem;
     }
 
     @media (min-width: 1921px) {
@@ -196,6 +204,9 @@
         font-size: 1.6rem;
         text-align: left;
         line-height: 2.25rem;
+    }
+    @media (min-width: $macbook-air-13) and (max-width: $macbook-air-15) {
+        font-size: 1.05rem;
     }
 
     @media (min-width: 1921px) {

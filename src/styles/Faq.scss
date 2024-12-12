@@ -8,12 +8,16 @@
     min-height: 77vh;
 
     @media (min-width: 769px) {
-        min-height: 71vh;
+        min-height: 75vh;
     }
-
+    @media (min-width: $macbook-air-13) and (max-width: $macbook-air-15) {
+        min-height: 50vh;
+    }
     @media (min-width: 1921px) {
         min-height: 88vh;
     }
+
+
 }
 
 .pageTitle{

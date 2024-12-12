@@ -58,6 +58,9 @@ const ServicePage: React.FC<ServicePageProps> = () => {
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
         >
+            <div className='SrvbackgroundShapeOne'></div>
+            <div className='SrvbackgroundShapeTwo'></div>
+            <div className='SrvbackgroundShapeThree'></div>
             <MainLayout currentService={currentService} updateCurrentService={setCurrentService} />
             <ServicesContainer currentService={currentService} />
         </section>
@@ -166,29 +169,38 @@ interface ServicesContainerProps {
 }
 
 const ServicesContainer: React.FC<ServicesContainerProps> = ({ currentService }) => {
-    let services: Service[] = [];
+    const [services, setServices] = useState<Service[]>([]);
+    const [animationState, setAnimationState] = useState<'fade-in' | 'fade-out'>('fade-in');
 
-    switch (currentService) {
-        case 0:
-            services = lashServices;
-            break;
-        case 1:
-            services = lashLifts;
-            break;
-        case 2:
-            services = browServices;
-            break;
-        case 3:
-            services = waxServices;
-            break;
-        case 4:
-            services = facialServices;
-            break;
-        default:
-            services = [];
-            break;
-    }
+    useEffect(() => {
+        setAnimationState('fade-out');
+        const timer = setTimeout(() => {
+            const isDesktop = window.innerWidth > 768;
+            switch (currentService) {
+                case 0:
+                    setServices(isDesktop ? browServices : lashServices);
+                    break;
+                case 1:
+                    setServices(lashLifts);
+                    break;
+                case 2:
+                    setServices(isDesktop ? lashServices : browServices);
+                    break;
+                case 3:
+                    setServices(waxServices);
+                    break;
+                case 4:
+                    setServices(facialServices);
+                    break;
+                default:
+                    setServices([]);
+                    break;
+            }
+            setAnimationState('fade-in');
+        }, 350);
 
+        return () => clearTimeout(timer);
+    }, [currentService]);
 
     function expandServiceBox(index: number) {
         const subServicesElement = document.querySelector(
@@ -232,7 +244,7 @@ const ServicesContainer: React.FC<ServicesContainerProps> = ({ currentService })
     ));
 
     return (
-        <section id="servicesContainer" className="servicesContainer">
+        <section id="servicesContainer" className={`servicesContainer ${animationState}`}>
             {servicesList}
         </section>
     );

@@ -13,10 +13,28 @@ html {
     margin: 0;
     padding: 0;
     background: $mainColor;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: $secondaryColor $mainColor; /* For Firefox */
 }
 
 body {
     margin: 0;
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: $mainColor;
+    border-radius: 10px; /* Rounded track */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $secondaryColor;
+    border-radius: 10px; /* Rounded thumb */
+    border: 3px solid $mainColor;
 }
 
 #gatsby-focus-wrapper {

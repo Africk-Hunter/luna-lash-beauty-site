@@ -21,6 +21,113 @@
 
 }
 
+.SrvbackgroundShapeOne,
+.SrvbackgroundShapeTwo,
+.SrvbackgroundShapeThree {
+    position: absolute;
+    z-index: 1;
+}
+
+.SrvbackgroundShapeOne {
+    display: none;
+    width: 20px;
+    height: 70px;
+    border-radius: 1rem 0 0 1rem;
+    background: $secondaryColor;
+    top: 15%;
+    right: 0%;
+
+    @media (min-width: 769px) {
+        display: flex;
+        width: 160px;
+        height: 95px;
+        border-radius: 0 0 5rem 5rem;
+        top: 20%;
+        right: 5%;
+    }
+
+    @media (min-width: $macbook-air-13) and (max-width: $macbook-air-15) {
+        top: 17%;
+        right: .5%;
+    }
+
+    @media (min-width: 1921px) {
+        width: 250px;
+        height: 140px;
+        border-radius: 5rem 0 10rem 10rem;
+        top: 20%;
+        right: 5%;
+    }
+}
+
+.SrvbackgroundShapeTwo {
+    display: none;
+    width: 20px;
+    height: 80px;
+    border-radius: 0 3rem 3rem 0;
+    background: $tertiaryColor;
+    top: 32%;
+    left: 0%;
+
+    @media (min-width: 769px) {
+        display: flex;
+        width: 160px;
+        height: 160px;
+        border-radius: 0 5rem 5rem 5rem;
+        top: 60%;
+        left: 17%;
+    }
+
+    @media (min-width: $macbook-air-13) and (max-width: $macbook-air-15) {
+        width: 120px;
+        height: 120px;
+        top: 45%;
+        left: 5%;
+    }
+
+    @media (min-width: 1921px) {
+        width: 200px;
+        height: 180px;
+        border-radius: 10rem 0rem 10rem 10rem;
+        top: 45%;
+        left: 7%;
+    }
+}
+
+.SrvbackgroundShapeThree {
+    display: none;
+    width: 30px;
+    height: 100px;
+    border-radius: 3rem 0 0 3rem;
+    background: $fourthColor;
+    bottom: 15%;
+    right: 0%;
+
+    @media (min-width: 769px) {
+        display: flex;
+        width: 160px;
+        height: 160px;
+        border-radius: 5rem;
+        top: 67%;
+        right: 17%;
+    }
+
+    @media (min-width: $macbook-air-13) and (max-width: $macbook-air-15) {
+        top: 80%;
+        right: 3%;
+        width: 120px;
+        height: 120px;
+    }
+
+    @media (min-width: 1921px) {
+        width: 200px;
+        height: 200px;
+        border-radius: 10rem;
+        top: 67%;
+        right: 3.3%;
+    }
+}
+
 .servicesNavBar {
     display: flex;
     justify-content: space-between;
@@ -117,6 +224,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    transition: opacity 0.5s ease-in-out;
 
     @media (min-width: 769px) {
         display: grid;
