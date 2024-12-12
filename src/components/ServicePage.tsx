@@ -189,6 +189,7 @@ const ServicesContainer: React.FC<ServicesContainerProps> = ({ currentService })
             break;
     }
 
+
     function expandServiceBox(index: number) {
         const subServicesElement = document.querySelector(
             `.subServices[data-index='${index}']`

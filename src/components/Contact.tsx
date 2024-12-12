@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import emailjs from 'emailjs-com';
 
 const contactInfo = ['(530) 208-8172', '@LunaLashAndBeautyCo', '6165 Ridgeview Court, Reno']
 const hours = ['Monday - Closed', 'Tuesday - 11:00am - 7:00pm', 'Wednesday - 11:00am - 7:00pm', 'Thursday - 11:00am - 7:00pm', 'Friday - 11:00am - 7:00pm', 'Saturday - 10:00am - 4:00pm', 'Sunday - Closed']
@@ -31,28 +31,24 @@ const ContactForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    Email.send({
-      SecureToken: "54e9d5b6-5624-4d13-8f6c-fc1b04261e68",
-      To: "Gamehunter5879@gmail.com",
-      From: "Gamehunter5879@gmail.com",
-      Subject: `Message from ${name} from your website`,
-      Body: `
-          Name: ${name}
-          Email: ${email}
-          Phone: ${phoneNumber}
-          Message: ${message}
-        `,
-    })
-      .then(() => {
-        console.log("Email sent successfully!");
+    const templateParams = {
+      name,
+      email,
+      phoneNumber,
+      message,
+    };
+
+    emailjs.send('service_cxyb1s5', 'template_8qr8o05', templateParams, 'CBZDxMNtzcxxOowCO')
+      .then((response) => {
+        console.log('Email sent successfully!', response.status, response.text);
 
         setName("");
         setEmail("");
         setPhoneNumber("");
         setMessage("");
       })
-      .catch((error: any) => {
-        console.log("Error sending email: " + error);
+      .catch((error) => {
+        console.log('Error sending email:', error);
       });
   };
 
