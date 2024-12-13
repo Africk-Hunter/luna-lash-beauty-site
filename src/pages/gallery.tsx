@@ -16,7 +16,7 @@ const Gallery: React.FC = () => {
       <Navbar />
       <div className="gallery">
         <h2 className="pageTitle">Gallery</h2>
-        <ImagesContainer images={images}/>
+        <ImagesContainer images={images} />
       </div>
       <Footer />
     </>
@@ -30,7 +30,7 @@ interface ImagesContainerProps {
 
 const ImagesContainer: React.FC<ImagesContainerProps> = ({ images }) => {
 
-  const imageList = images.map(image => 
+  const imageList = images.map(image =>
     <div className="imgContainer"><img src={image} alt="" className="galleryImg" /></div>
   );
 

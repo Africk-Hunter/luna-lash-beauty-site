@@ -21,6 +21,13 @@ const config: GatsbyConfig = {
         display: 'swap'
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Luna Lash & Beauty Co.`,
+        icon: `src/images/lunalashlogo.png`,
+      },
+    },
   ],
 };
 
