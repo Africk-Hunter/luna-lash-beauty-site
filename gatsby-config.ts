@@ -2,8 +2,9 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `luna-lash-beauty-site`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `Luna Lash & Beauty Co.`,
+    description: `Luna Lash & Beauty Co. is a premier beauty salon in Reno, NV, specializing in natural lash sets, full-body waxing, and skincare. Our goal is to create a comfortable, relaxing space and provide personalized services for everyone who walks through our door.`,
+    siteUrl: `https://lunalashandbeautyco.com/`
   },
   graphqlTypegen: true,
   plugins: [

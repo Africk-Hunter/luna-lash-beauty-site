@@ -1,5 +1,3 @@
-// services.js
-
 const lashServices = [
     {
         title: "Classic Full Set",
@@ -78,7 +76,7 @@ const lashServices = [
         price: 45,
         subServices: [
             {
-                title: "A mini fill for when you need a small, quick touch up between your normal appointments ",
+                title: "A mini fill for when you need a small, quick touch up between your normal appointments.",
                 price: null,
             },
         ]
@@ -86,11 +84,16 @@ const lashServices = [
     {
         title: "Colored lash add on",
         price: 5,
+        subServices: [
+            {
+                title: "Add a pop of color to your lash set for a bold, customized look perfect for any occasion!",
+                price: null,
+            },
+        ]
     },
     {
         title: "Lash extension removal",
         price: 35,
-    
     },
 
 ];const lashLifts = [
