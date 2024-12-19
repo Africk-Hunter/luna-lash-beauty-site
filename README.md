@@ -28,5 +28,5 @@ Luna Lash & Beauty Co. is a beauty salon based in Reno, NV, specializing in natu
 
 To get a local copy up and running run the commands:
 
-npm install
-npm run develop
+1. npm install
+2. npm run develop

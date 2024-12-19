@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import hamburger from '../images/hamburger.svg'
+import x from '../images/close.svg'
 
 const Navbar: React.FC = () => {
 
   const [windowWidth, setWindowWidth] = useState(0)
+  const [navBarOpen, setNavBarOpen] = useState(false)
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,9 +26,11 @@ const Navbar: React.FC = () => {
 
     if (navLinks?.classList.contains('open')) {
       navLinks?.classList.remove('open');
+      setNavBarOpen(false);
       return;
     }
     navLinks?.classList.add('open');
+    setNavBarOpen(true);
   }
 
   return (
@@ -35,7 +39,7 @@ const Navbar: React.FC = () => {
         <>
           <section className='topBarWrapper'>
             <a href='/'><h1 className='companyName'>Luna Lash & Beauty Co.</h1></a>
-            <button className='hamburgerButton' onClick={toggleHamburger}><img src={hamburger} alt="Dropdown Menu" className='hamburgerImg' /></button>
+            <button className='hamburgerButton' onClick={toggleHamburger}><img src={ !navBarOpen ? hamburger : x} alt="Dropdown Menu" className='hamburgerImg' /></button>
           </section>
           <NavBarLinksWrapper windowWidth={windowWidth} names={['Home', 'Services', 'Gallery', 'About', 'FAQ']} />
         </>
