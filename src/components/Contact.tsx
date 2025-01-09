@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import emailjs from 'emailjs-com';
 
-const contactInfo = ['(530) 208-8172', '@LunaLashAndBeautyCo', '6165 Ridgeview Court, Reno']
+const contactInfo = ['(530) 208-8172', '@LunaLashAndBeautyCo', '6165 Ridgeview Court, Suite G, Reno']
 const hours = ['Monday - Closed', 'Tuesday - 11:00am - 7:00pm', 'Wednesday - 11:00am - 7:00pm', 'Thursday - 11:00am - 7:00pm', 'Friday - 11:00am - 7:00pm', 'Saturday - 10:00am - 4:00pm', 'Sunday - Closed']
 
 const Contact: React.FC = () => {

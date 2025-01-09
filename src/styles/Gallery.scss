@@ -38,6 +38,7 @@
     @media (min-width: 769px) {
         width: 60%;
     }
+    z-index: 10;
 }
 
 .imgContainer{
@@ -46,6 +47,10 @@
     border: solid 3px $whiteColor;
     border-radius: 5px;
     margin-bottom: 2rem;
+
+    &:active{
+        transform: scale(0.95);
+    }
 
     @media (min-width: 769px) {
         width: 20%; 
@@ -56,4 +61,48 @@
     width: 100%;
     height: auto;
     display: block;
+    cursor: pointer;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.3s;
+    z-index: 1000; /* Ensure it overlays everything */
+}
+
+.shown{
+    display: flex;
+}
+
+.overlayImg {
+    max-width: 70%;
+    max-height: 90%;
+    @media screen and (min-width: 768px) {
+        max-width: 90%;
+        max-height: 90%;
+        
+    }
+
+    border: 5px solid white;
+    border-radius: 10px;
+}
+
+.closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
 }

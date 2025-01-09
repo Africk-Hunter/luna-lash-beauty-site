@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import HeroImageOne from '../images/imageTwo.jpg'
-import HeroImageTwo from '../images/imageThree.jpg'
+import HeroImageTwo from '../images/imageFive.jpg'
 import HeroArrow from '../images/heroArrow.svg'
 import HeroShape from '../images/heroShape.svg'
 
