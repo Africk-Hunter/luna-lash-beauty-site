@@ -6,7 +6,6 @@ import Img1 from '../images/imageOne.jpg';
 import Img2 from '../images/imageTwo.jpg';
 import Img3 from '../images/imageThree.jpg';
 import Img4 from '../images/imageFour.jpg';
-import Img5 from '../images/imageFive.jpg';
 import Img6 from '../images/imageSix.jpg';
 import Img7 from '../images/imageSeven.jpg';
 import Img8 from '../images/imageEight.jpg';
@@ -16,7 +15,7 @@ import Img10 from '../images/imageTen.jpg';
 
 const Gallery: React.FC = () => {
 
-  const images = [Img1, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img9, Img10];
+  const images = [Img2, Img3, Img4, Img6, Img7, Img8, Img9, Img10, Img1];
   const [overlayShown, setOverlayShown] = useState(false);
   const [overlayImage, setOverlayImage] = useState(Img1);
 
