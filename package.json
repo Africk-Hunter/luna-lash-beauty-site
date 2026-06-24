@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "emailjs-com": "^3.2.0",
-    "gatsby": "^5.13.7",
+    "gatsby": "^5.16.1",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^5.14.0",
     "gatsby-plugin-netlify-cms": "^7.12.1",
