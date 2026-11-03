@@ -1,0 +1,4 @@
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "frame-ancestors 'self' https://hunterafrick.com https://www.hunterafrick.com http://localhost:8000"
